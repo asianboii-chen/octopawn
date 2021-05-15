@@ -1,0 +1,41 @@
+.SettingItem {
+  display: table-row;
+  width: 100%;
+  height: 6.25vmin;
+}
+
+.SettingItem-title {
+  display: table-cell;
+  width: 50%;
+  height: 6.25vmin;
+  vertical-align: middle;
+}
+
+.SettingItem-option {
+  display: table-cell;
+  width: 25%;
+  height: 6.25vmin;
+  vertical-align: middle;
+  user-select: none;
+  cursor: pointer;
+}
+
+.SettingItem-option.dark {
+  background-color: black;
+  color: white;
+}
+
+.SettingItem-option.light {
+  background-color: white;
+  color: black;
+}
+
+.SettingItem-option.inactive {
+  opacity: 0.125;
+}
+
+.SettingItem-option.active {
+  font-weight: bold;
+  opacity: 0.6667;
+  box-shadow: 0 0 2px 0 #666;
+}

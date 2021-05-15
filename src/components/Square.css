@@ -1,0 +1,30 @@
+.Square {
+  width: 12.5vmin;
+  height: 12.5vmin;
+  float: left;
+  text-align: center;
+}
+
+.Square.empty {
+  cursor: auto;
+}
+
+.Square.nonempty {
+  cursor: pointer;
+}
+
+.Square.dark.normal {
+  background-color: #888;
+}
+
+.Square.light.normal {
+  background-color: #aaa;
+}
+
+.Square.dark.highlighted {
+  background-color: #a8a;
+}
+
+.Square.light.highlighted {
+  background-color: #cac;
+}

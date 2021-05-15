@@ -1,0 +1,24 @@
+.Settings {
+  position: absolute;
+  top: 62.5vmin;
+  left: 12.5vmin;
+  width: 50vmin;
+  display: table;
+  text-align: center;
+}
+
+.Settings.dark {
+  color: #ddd;
+}
+
+.Settings.light {
+  color: black;
+}
+
+.Settings-title {
+  font-size: large;
+  letter-spacing: 0.25em;
+  height: 12.5vmin;
+  display: table-cell;
+  vertical-align: middle;
+}

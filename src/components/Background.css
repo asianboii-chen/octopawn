@@ -1,0 +1,31 @@
+.Background {
+  position: absolute;
+  left: 0vw;
+  top: 0vh;
+  width: 100vw;
+  height: 100vh;
+  display: table;
+  z-index: -1;
+}
+
+.Background.dark {
+  background-color: #222;
+}
+
+.Background.light {
+  background-color: #eee;
+}
+
+.Background-square {
+  width: 12.5vmin;
+  height: 12.5vmin;
+  fill-opacity: 0.03125;
+}
+
+.Background-square.dark {
+  fill: black;
+}
+
+.Background-square.light {
+  fill: white;
+}

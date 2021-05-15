@@ -1,0 +1,6 @@
+.Piece {
+  user-select: none;
+  pointer-events: none;
+  margin-top: 0.6944vmin;
+  width: 11.11vmin;
+}

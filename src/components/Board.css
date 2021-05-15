@@ -1,0 +1,15 @@
+.Board {
+  position: absolute;
+  display: table;
+  left: 12.5vmin;
+  top: 12.5vmin;
+  user-select: none;
+}
+
+.Board.dark {
+  box-shadow: 0 0 6.25vmin 0 black;
+}
+
+.Board.light {
+  box-shadow: 0 0 2.778vmin 0 #888;
+}
