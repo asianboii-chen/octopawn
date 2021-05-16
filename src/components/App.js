@@ -5,45 +5,56 @@ import Settings from './Settings';
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLightTheme: true,
-      isShowingCoords: true,
-    };
-  }
+  state = {
+    isLightTheme: false,
+    isShowingCoords: true,
+    squarePieces: Board.INIT_SQUARE_PIECES.concat(),
+    isWhiteOnMove: true,
+    highlightedSquares: [],
+  };
 
   render() {
-    const { isLightTheme, isShowingCoords } = this.state;
-    const state = new Array(Board.BOARD_SIZE).fill(null);
-    state[2] = 'q';
-    state[4] = 'P';
-    state[11] = 'Q';
-    state[13] = 'p';
     return (
       <div className='App'>
-        <Background isLightTheme={isLightTheme} />
+        <Background isLightTheme={this.state.isLightTheme} />
         <Board
-          isLightTheme={isLightTheme}
-          squarePieces={state}
-          highlightedSquares={[0, 4]}
+          isLightTheme={this.state.isLightTheme}
+          showCoords={this.state.isShowingCoords}
+          squarePieces={this.state.squarePieces}
+          isWhiteOnMove={this.state.isWhiteOnMove}
+          highlightedSquares={this.state.highlightedSquares}
+          onMove={this._handleMove}
         />
         <Settings
-          isLightTheme={isLightTheme}
-          isShowingCoords={isShowingCoords}
-          onIsLightThemeChange={this.handleIsLightThemeChange_}
-          onIsShowingCoordsChange={this.handleIsShowingCoords_}
+          isLightTheme={this.state.isLightTheme}
+          isShowingCoords={this.state.isShowingCoords}
+          onIsLightThemeChange={this._handleIsLightThemeChange}
+          onIsShowingCoordsChange={this._handleIsShowingCoordsChange}
         />
       </div>
     );
   }
 
-  handleIsLightThemeChange_ = (value) => {
+  _handleIsLightThemeChange = (value) => {
     this.setState({ isLightTheme: value });
   };
 
-  handleIsShowingCoords_ = (value) => {
+  _handleIsShowingCoordsChange = (value) => {
     this.setState({ isShowingCoords: value });
+  };
+
+  _handleMove = (sourceSquareId, targetSquareId, newSquarePieces) => {
+    console.log(
+      this.state.isWhiteOnMove ? 'White plays' : 'Black plays',
+      `${Board.getSquareName(sourceSquareId)}-${Board.getSquareName(
+        targetSquareId
+      )}`
+    );
+    this.setState((currState) => ({
+      squarePieces: newSquarePieces,
+      isWhiteOnMove: !currState.isWhiteOnMove,
+      highlightedSquares: [sourceSquareId, targetSquareId],
+    }));
   };
 }
 

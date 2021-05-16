@@ -2,29 +2,47 @@
   width: 12.5vmin;
   height: 12.5vmin;
   float: left;
-  text-align: center;
 }
 
-.Square.empty {
+.Square.illegal {
   cursor: auto;
 }
 
-.Square.nonempty {
+.Square.legal {
   cursor: pointer;
 }
 
 .Square.dark.normal {
   background-color: #888;
+  color: #ccc;
 }
 
 .Square.light.normal {
   background-color: #aaa;
+  color: #666;
 }
 
 .Square.dark.highlighted {
-  background-color: #a8a;
+  background-color: #a8b;
+  color: #cbd;
 }
 
 .Square.light.highlighted {
-  background-color: #cac;
+  background-color: #b9c;
+  color: #768;
+}
+
+.Square-x-label {
+  position: absolute;
+  width: 12.5vmin;
+  text-align: end;
+  letter-spacing: 0.125em;
+  bottom: 0;
+  font-size: large;
+}
+
+.Square-y-label {
+  position: absolute;
+  margin-left: 0.125em;
+  font-size: large;
 }

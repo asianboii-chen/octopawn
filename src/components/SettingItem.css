@@ -21,12 +21,12 @@
 }
 
 .SettingItem-option.dark {
-  background-color: black;
+  background-color: #111;
   color: white;
 }
 
 .SettingItem-option.light {
-  background-color: white;
+  background-color: #eee;
   color: black;
 }
 
@@ -36,6 +36,6 @@
 
 .SettingItem-option.active {
   font-weight: bold;
-  opacity: 0.6667;
-  box-shadow: 0 0 2px 0 #666;
+  opacity: 0.5;
+  box-shadow: 0 0 0.3472vmin 0 black;
 }

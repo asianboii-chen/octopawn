@@ -7,7 +7,7 @@
 }
 
 .Board.dark {
-  box-shadow: 0 0 6.25vmin 0 black;
+  box-shadow: 0 0 6.25vmin 1.389vmin black;
 }
 
 .Board.light {

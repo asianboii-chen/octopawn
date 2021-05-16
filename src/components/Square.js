@@ -1,22 +1,24 @@
-import { Component } from 'react';
 import Piece from './Piece.js';
 import './Square.css';
 
-class Square extends Component {
-  render() {
-    const { piece, isLight, isHighlighted, handleClick } = this.props;
-    const classes = [
-      'Square',
-      piece ? 'nonempty' : 'empty',
-      isLight ? 'light' : 'dark',
-      isHighlighted ? 'highlighted' : 'normal',
-    ];
-    return (
-      <div className={classes.join(' ')} onClick={handleClick}>
-        {piece && <Piece image={piece} />}
-      </div>
-    );
-  }
+function Square(props) {
+  const classes = [
+    'Square',
+    props.isLight ? 'light' : 'dark',
+    props.isHighlighted ? 'highlighted' : 'normal',
+    props.isLegal ? 'legal' : 'illegal',
+  ];
+  return (
+    <div className={classes.join(' ')} onClick={props.handleClick}>
+      {props.piece && (
+        <div className='Square-piece'>
+          <Piece image={props.piece} />
+        </div>
+      )}
+      {props.yText && <div className='Square-y-label'>{props.yText}</div>}
+      {props.xText && <div className='Square-x-label'>{props.xText}</div>}
+    </div>
+  );
 }
 
 export default Square;
